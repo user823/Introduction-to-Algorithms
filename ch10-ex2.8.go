@@ -20,7 +20,7 @@ func main() {
 
 type node struct {
 	data int
-	np uintptr //np = pre XOR next 
+	np uintptr //np = pre XOR next ， 注意golang中指针不能参与运算，所以使用uintptr，但是垃圾回收机制移动对象地址之后uintptr的值将无意义！
 }
 
 func createList(nums []int) *node{
